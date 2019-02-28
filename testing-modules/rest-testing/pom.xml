@@ -1,174 +1,210 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.baeldung</groupId>
-    <artifactId>rest-testing</artifactId>
-    <version>0.1-SNAPSHOT</version>
-    <name>rest-testing</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.baeldung</groupId>
+	<artifactId>rest-testing</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<name>rest-testing</name>
 
-    <parent>
-        <groupId>com.baeldung</groupId>
-        <artifactId>parent-java</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../parent-java</relativePath>
-    </parent>
+	<parent>
+		<groupId>com.baeldung</groupId>
+		<artifactId>parent-java</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../../parent-java</relativePath>
+	</parent>
 
-    <dependencies>
+	<dependencies>
 
-        <!-- utils -->
+		<!-- utils -->
 
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
 
-        <!-- http client -->
+		<!-- http client -->
 
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpclient.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>commons-logging</artifactId>
-                    <groupId>commons-logging</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpcore</artifactId>
-            <version>${httpcore.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>${httpcore.version}</version>
+		</dependency>
 
-        <!-- marshalling -->
+		<!-- marshalling -->
 
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
 
-        <!-- test scoped -->
-        <dependency>
-            <groupId>com.github.tomakehurst</groupId>
-            <artifactId>wiremock</artifactId>
-            <version>${wiremock.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<!-- test scoped -->
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock</artifactId>
+			<version>${wiremock.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>org.jbehave</groupId>
-            <artifactId>jbehave-core</artifactId>
-            <version>${jbehave.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>com.intuit.karate</groupId>
-            <artifactId>karate-apache</artifactId>
-            <version>${karate.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.jbehave</groupId>
+			<artifactId>jbehave-core</artifactId>
+			<version>${jbehave.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>com.intuit.karate</groupId>
-            <artifactId>karate-junit4</artifactId>
-            <version>${karate.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-apache</artifactId>
+			<version>${karate.version}</version>
+		</dependency>
 
-    <build>
-        <finalName>rest-testing</finalName>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-        
-        <plugins>
-             <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>${maven-failsafe-plugin.version}</version>
-                <configuration>
-                    <parallel>classes</parallel>
-                    <threadCount>4</threadCount>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin> 
-            <plugin>
-              <groupId>com.github.temyers</groupId>
-              <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-              <version>5.0.0</version>
-              <executions>
-                <execution>
-                  <id>generateRunners</id>
-                  <phase>generate-test-sources</phase>
-                  <goals>
-                    <goal>generateRunners</goal>
-                  </goals>
-                  <configuration>
-                    <glue>
-                      <package>com.baeldung.rest.cucumber</package>
-                    </glue>
-                    <featuresDirectory>src/test/resources/Feature/</featuresDirectory>
-                    <parallelScheme>SCENARIO</parallelScheme>
-                  </configuration>
-                </execution>
-              </executions>
-            </plugin>
-        </plugins>
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-junit4</artifactId>
+			<version>${karate.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    </build>
+	<build>
+		<finalName>rest-testing</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 
-    <properties>
-        <!-- marshalling -->
-        <jackson.version>2.9.7</jackson.version>
+		<plugins>
+ 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.21.0</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+					<includes>
+						<include>**/RunBDDUnitTest.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>2.0.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>cucumber-jvm-example</projectName>
+							<outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
+							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+							<skippedFails>true</skippedFails>
+							<enableFlashCharts>false</enableFlashCharts>
+							<buildNumber>42</buildNumber>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven-failsafe-plugin.version}</version>
+				<configuration>
+					<parallel>classes</parallel>
+					<threadCount>4</threadCount>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.temyers</groupId>
+				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
+				<version>5.0.0</version>
+				<executions>
+					<execution>
+						<id>generateRunners</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>generateRunners</goal>
+						</goals>
+						<configuration>
+							<glue>
+								<package>com.baeldung.rest.cucumber</package>
+							</glue>
+							<featuresDirectory>src/test/resources/Feature/</featuresDirectory>
+							<parallelScheme>SCENARIO</parallelScheme>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 
-        <!-- util -->
-        <guava.version>19.0</guava.version>
-        <commons-lang3.version>3.5</commons-lang3.version>
+	</build>
 
-        <!-- testing -->
-        <rest-assured.version>2.9.0</rest-assured.version>
-        <cucumber.version>1.2.5</cucumber.version>
-        <wiremock.version>2.21.0</wiremock.version>
-        <karate.version>0.6.1</karate.version>
+	<properties>
+		<!-- marshalling -->
+		<jackson.version>2.9.7</jackson.version>
 
-        <httpcore.version>4.4.5</httpcore.version>
-        <httpclient.version>4.5.2</httpclient.version>
+		<!-- util -->
+		<guava.version>19.0</guava.version>
+		<commons-lang3.version>3.5</commons-lang3.version>
 
-        <jbehave.version>4.1</jbehave.version>
+		<!-- testing -->
+		<rest-assured.version>2.9.0</rest-assured.version>
+		<cucumber.version>1.2.5</cucumber.version>
+		<wiremock.version>2.21.0</wiremock.version>
+		<karate.version>0.6.1</karate.version>
 
-        <!-- maven plugins -->
-        <maven-war-plugin.version>2.6</maven-war-plugin.version>
-    </properties>
+		<httpcore.version>4.4.5</httpcore.version>
+		<httpclient.version>4.5.2</httpclient.version>
+
+		<jbehave.version>4.1</jbehave.version>
+
+		<!-- maven plugins -->
+		<maven-war-plugin.version>2.6</maven-war-plugin.version>
+	</properties>
 
 </project>

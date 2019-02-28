@@ -5,6 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:Feature")
+@CucumberOptions(strict = false, features = "classpath:Feature", format = { "pretty",
+"json:target/cucumber.json" }, tags = { "~@ignore" })
 public class CucumberIntegrationTest {
 }
